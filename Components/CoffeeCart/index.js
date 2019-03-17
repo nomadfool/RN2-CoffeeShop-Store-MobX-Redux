@@ -4,24 +4,13 @@ import React, { Component } from "react";
 import { Text, List, Button } from "native-base";
 // Component
 import CartItem from "./CartItem";
+import cartStore from "../../stores/cartStore";
+
+// Stores
 
 class CoffeeCart extends Component {
-  state = {
-    items: [
-      {
-        drink: "Latte",
-        option: "Small",
-        quantity: 2
-      },
-      {
-        drink: "Espresso",
-        option: "Large",
-        quantity: 1
-      }
-    ]
-  };
   render() {
-    let items = this.state.items;
+    let items = cartStore.items;
     let cartItems;
     if (items) {
       cartItems = items.map((item, index) => (

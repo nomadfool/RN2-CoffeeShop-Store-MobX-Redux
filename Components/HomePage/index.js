@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
+import { observer } from "mobx-react";
 
 // NativeBase Components
 import { Container, Header } from "native-base";
@@ -19,10 +20,12 @@ class HomePage extends Component {
       <Container style={styles.transparent}>
         <View style={styles.overlay} />
         <Header style={styles.transparent} />
-        <CoffeeCart />
+        {/* <CoffeeCart /> */}
+        <CoffeeList />
+        {/* <CoffeeDetail /> */}
       </Container>
     );
   }
 }
 
-export default HomePage;
+export default observer(HomePage);
